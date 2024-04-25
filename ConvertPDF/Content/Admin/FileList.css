@@ -1,0 +1,8 @@
+﻿    .mix-grid .mix {
+        vertical-align: middle;
+        float: none;
+    }
+
+        .mix-grid .mix .img-container img {
+            min-height: 150px;
+        }

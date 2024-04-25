@@ -1,0 +1,193 @@
+﻿
+<style>
+
+    .panel.panel-blue {
+        border-color: #418bca;
+    }
+
+        .panel.panel-blue > .panel-heading {
+            color: white;
+            background-color: #418bca;
+            border-color: #418bca;
+        }
+
+    .panel.panel-filled.panel-blue .panel-body {
+        background-color: #5597d0;
+        color: white;
+    }
+
+    .custom-font {
+        font-family: "Dosis", "Arial", sans-serif;
+    }
+</style>
+
+<div class="page page-campaign" ng-controller="importPdfDocument">
+    <div class="pageheader">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+            </ul>
+        </div>
+    </div>
+    <img src="~/Content/aren.jpeg"  style="float:inline-end;max-width:1200px"/>
+
+    <!-- page content -->
+    <!--<div class="pagecontent">
+        <div class="row">-->
+            <!-- col -->
+            <!--<div class="col-sm-12" id="loader">-->
+                <!-- tile -->
+                <!--<section class="tile">-->
+                    <!-- tile header -->
+                    <!--<div class="tile-header bg-blue dvd dvd-btm">
+                        <h1 class="custom-font"><strong>AREN - PDF ÇEVİRME </strong></h1>
+                        <ul role="tablist" class="controls">
+                        </ul>
+                    </div>-->
+                    <!-- /tile header -->
+                    <!-- tile widget -->
+
+                    <!--<div class="tile-body p-10">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="tab-content">
+                                    <div id="tNewFile" role="tabpanel" class="tab-pane p-0 active ">
+                                        <div class="tile-widget">
+                                            <div class="form-horizontal p-0">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="row">
+                                                            <div class="col-sm-9">
+                                                                <div class="row">
+                                                                    <div class="col-sm-9">
+                                                                        <div class="form-group">
+                                                                            <div class="col-xs-12">
+                                                                                <div class="col-md-7">
+                                                                                    <label class="btn btn-default btn-block">
+                                                                                        <input id="pdf-excel-selector" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-buttonText="Seciniz" data-iconName="fa fa-file" class="filestyle">
+                                                                                        <i class="fa fa-folder-open-o fa-fw"></i> Dosya Seç
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="col-md-5">
+                                                                                    <button class="btn btn-block btn-warning btn-rounded" ng-click="uploadExcelFile()">
+                                                                                        <span class="hidden-sm">EXCEL'İ YÜKLE</span> <i class="fa fa-search visible-sm"></i>
+                                                                                    </button>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-3">
+                                                                        <button class="btn btn-block btn-success btn-rounded" ng-click="changePdf()">
+                                                                            <span class="hidden-sm">PDF'E ÇEVİR</span> <i class="fa fa-search visible-sm"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <button class="btn btn-block btn-primary btn-rounded" ng-click="dowlandFile()">
+                                                                    <span class="hidden-sm">Örnek Excel İndir</span> <i class="fa fa-search visible-sm"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>-->
+                                        <!-- /tile widget -->
+
+                                        <!--<hr class="m-0" />-->
+
+                                        <!-- tile body -->
+                                        <!--<div class="tile-body p-10">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="row form-horizontal">
+                                                        <div class="col-sm-12">
+                                                            <div class="panel panel-blue panel-filled1">
+                                                                <div class="panel-heading">
+                                                                    <h3 class="panel-title">Excelden Okunan Satırlar</h3>
+                                                                </div>
+
+                                                                <div class="panel-body p-5">
+                                                                    <div id="pnlCampaignsSearchResult" class="table-responsive">
+                                                                        <table class="table table-condensed table-bordered table-striped">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th class="text-center">Tarih</th>
+                                                                                    <th class="text-center">Cari Adı</th>
+                                                                                    <th class="text-center">TC No</th>
+                                                                                    <th class="text-center">Adres</th>
+                                                                                    <th class="text-center">Mahiyeti</th>
+                                                                                    <th class="text-center">Miktari</th>
+                                                                                    <th class="text-center">Birim Fiyatı</th>
+                                                                                    <th class="text-center">Toplam Fiyatı</th>
+
+
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr ng-repeat="row in uploadlist">
+                                                                                    <td class="text-center">{{row.DateTimeStr}}</td>
+                                                                                    <td class="text-center">{{row.CustomerName}}</td>
+                                                                                    <td class="text-center">{{row.TCNumber}}</td>
+                                                                                    <td class="text-center">{{row.Address}}</td>
+                                                                                    <td class="text-center">{{row.Mahiyet}}</td>
+                                                                                    <td class="text-center">{{row.Quantity}}</td>
+                                                                                    <td class="text-center">{{row.PriceList}}</td>
+                                                                                    <td class="text-center">{{row.TotalPrice}}</td>
+
+
+
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>-->
+                                        <!-- /tile body -->
+                                        <!--<div id="mPdfShow" tabindex="-1" role="dialog" aria-labelledby="mPdfShowLabel" aria-hidden="true" class="modal fade" style="min-height:800px;width:100%">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <iframe style="min-height:600px;width:100%" src="{{frameUrl}}"></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>-->
+                <!-- /tile -->
+                <!-- /col -->
+            <!--</div>-->
+            <!-- /row -->
+        <!--</div>
+
+    </div>-->
+
+ 
+</div>
+
+<script src="~/Scripts/Js/jszip.js" type="text/javascript"></script>
+<script src="~/Scripts/Js/xlsx.full.min.js" type="text/javascript"></script>
+<script src="~/Scripts/htmlConvert.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/Css/main.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+<link rel="stylesheet" href="~/Content/izToast/css/iziToast.css">
+<script src="~/Content/izToast/js/iziToast.js" type="text/javascript"></script>

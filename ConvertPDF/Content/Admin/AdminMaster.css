@@ -1,0 +1,76 @@
+﻿.scrolling {
+    height: 600px;
+    overflow-y: scroll;
+}
+
+.fa-reports:before {
+    content: "\f201";
+}
+
+.fa.fa-reports {
+    margin-right: 3px;
+}
+
+.report-header-main {
+    display: table;
+    width: 100%;
+}
+
+    .report-header-main .report-cols {
+        display: table-cell;
+        width: 50%;
+        vertical-align: middle;
+    }
+
+
+
+
+.tableFixHead {
+    overflow-y: auto;
+    height: 85vh;
+}
+
+    .tableFixHead table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 0px !important;
+    }
+
+        .tableFixHead table thead {
+            position: relative;
+            z-index: 2;
+        }
+
+        .tableFixHead table tbody {
+            position: relative;
+            z-index: 1;
+        }
+
+    .tableFixHead th,
+    .tableFixHead td {
+        padding: 8px 16px;
+    }
+
+    .tableFixHead th {
+        position: sticky;
+        top: -1px;
+        background: #fff;
+        z-index: 2;
+    }
+
+.centeredCol {
+    text-align: center !important;
+}
+
+.shadowed {
+    box-shadow: 0px 0px 0.5px 0.1px rgb(223, 223, 223)
+}
+
+.purpleTileHeader {
+    background-color: #51445f !important;
+    color: white;
+}
+
+.tableNoWrap th, .tableNoWrap td {
+    white-space: nowrap
+}
